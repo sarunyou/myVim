@@ -13,6 +13,7 @@ Plug 'shougo/unite.vim'
 Plug 'rking/ag.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'raimondi/delimitmate'
+Plug 'mattn/emmet-vim'
 call plug#end()
 syntax enable
 set t_Co=256
@@ -40,7 +41,6 @@ let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
-nmap <leader>q :q!<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
@@ -124,6 +124,19 @@ let g:airline#extensions#tabline#enabled=1
 set laststatus=2
 set encoding=utf-8
 let g:airline_powerline_fonts=1
+"deliMate
+let delimitMate_expand_cr=1
+""""""""""""""""""""""""""""""
+" => CTRL-P
+""""""""""""""""""""""""""""""
+let g:ctrlp_working_path_mode='ra'
+
+"let g:ctrlp_map = '<c-f>'
+map <leader>j :CtrlP<cr>
+map <c-b> :CtrlPBuffer<cr>
+
+let g:ctrlp_max_height = 20
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
