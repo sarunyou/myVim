@@ -19,6 +19,14 @@ Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
+Plug 'othree/html5.vim'
+Plug 'elzr/vim-json'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'wavded/vim-stylus'
+Plug 'plasticboy/vim-markdown'
+Plug 'gregsexton/MatchTag'
+Plug 'alvan/vim-closetag'
+Plug 'lukaszb/vim-web-indent'
 call plug#end()
 syntax enable
 set t_Co=256
@@ -138,7 +146,8 @@ set cmdheight=2
 
 " A buffer becomes hidden when it is abandoned
 set hid
-
+"Idsplay command which you typing and other command related stuff
+"set showcmd
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
@@ -217,7 +226,8 @@ let g:syntastic_python_checkers=['pyflakes']
 
 " Javascript
 let g:syntastic_javascript_checkers = ['jshint']
-
+" Json files with jshint
+let g:syntastic_filetype_map= {"json": "javascript", }
 " Go
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
@@ -230,7 +240,9 @@ func! SyntasticCheckCoffeescript()
     execute "Errors"
 endfunc
 nnoremap <silent> <leader>c :call SyntasticCheckCoffeescript()<cr>
-
+" vim-closetag
+"Enable for files with this extensions
+let g:closetag_filenames="*.handlebars,*.html,*.xhtml,*.phtml"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
