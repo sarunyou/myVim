@@ -18,11 +18,15 @@ Plug 'sjl/badwolf'
 Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
+Plug 'majutsushi/tagbar'
 call plug#end()
 syntax enable
 set t_Co=256
 let g:solarized_termcolors=256
-colorscheme badwolf
+if has('win32')
+else
+    colorscheme badwolf
+endif
 set number
 set relativenumber
 
